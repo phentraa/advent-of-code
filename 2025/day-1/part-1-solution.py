@@ -1,19 +1,5 @@
+from shared import read_rotations_from_input
 actual_dial_position = 50
-
-def rotation_to_int(rotation: str) -> int:
-    """Convert rotation into a negative or positive integer.
-
-    Args:
-        rotation (str): The direction and distance of the rotation, 
-                        consisting of an 'L' or 'R' character followed by an integer.
-
-    Returns:
-        int: A negative integer if the string starts with 'L', 
-             and a positive integer if it starts with 'R'.
-    """
-
-    number = int(rotation[1:])
-    return number if rotation[0] == 'R' else -number
 
 def get_new_dial_position(actual, rotation):
     """
@@ -37,14 +23,12 @@ def get_new_dial_position(actual, rotation):
 
 
 if __name__ == '__main__':
-    rotations = None
-    with open('input.txt', 'r') as input:
-        rotations = [rotation_to_int(r) for r in input.readlines()]
+    
     
     reached_zero_count = 0
 
     # print(rotations)
-    for rotation in rotations:
+    for rotation in read_rotations_from_input(test_exec=True):
         # print('Actual dial position: ', actual_dial_position)
 
         actual_dial_position = get_new_dial_position(
