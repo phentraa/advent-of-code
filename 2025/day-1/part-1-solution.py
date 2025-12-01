@@ -1,4 +1,5 @@
 from shared import read_rotations_from_input
+
 actual_dial_position = 50
 
 def get_new_dial_position(actual, rotation):
@@ -27,9 +28,7 @@ if __name__ == '__main__':
     
     reached_zero_count = 0
 
-    # print(rotations)
-    for rotation in read_rotations_from_input(test_exec=True):
-        # print('Actual dial position: ', actual_dial_position)
+    for rotation in read_rotations_from_input(test_exec=False):
 
         actual_dial_position = get_new_dial_position(
             actual_dial_position,
@@ -38,7 +37,5 @@ if __name__ == '__main__':
         
         if actual_dial_position == 0:
             reached_zero_count += 1
-
-    # print('Actual dial position: ', actual_dial_position)
 
     print('Reached 0: ', reached_zero_count)    
