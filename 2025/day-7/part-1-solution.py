@@ -1,8 +1,5 @@
 from shared import get_manifest
 
-def replace_at_position(s: str, pos: int, value: str):
-    return s[:pos] + value + s[pos+1:]
-
 if __name__ == '__main__':
     
     total_split_count = 0

@@ -3,7 +3,3 @@ def get_manifest(test_exec: bool = False):
 
     with open(file_name, 'r') as f:
         return [line.strip() for line in f.readlines()]
-
-
-def get_index_of_char_in_row(char: str, row: str):
-    pass
